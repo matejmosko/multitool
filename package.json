@@ -1,0 +1,46 @@
+{
+  "name": "Multitool",
+  "version": "0.0.1",
+  "description": "Set of tools to help with common tasks I do.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build",
+    "win": "build --win",
+    "electron-builder": "electron-builder"
+  },
+  "repository": "https://github.com/matejmosko/multitool",
+  "keywords": [
+    "multitool"
+  ],
+  "author": "Matej Moško",
+  "license": "CC0-1.0",
+  "postinstall": "install-app-deps",
+  "devDependencies": {
+    "electron": "^1.7.6",
+    "electron-builder": "^18.0.1"
+  },
+  "dependencies": {
+    "decompress-zip": "^0.3.0",
+    "electron-settings": "^3.1.1",
+    "fs": "0.0.1-security",
+    "mustache": "^2.3.0",
+    "xel": "0.0.48"
+  },
+  "build": {
+    "productName": "impress Player",
+    "appId": "com.electron.MatejMosko.impressPlayer",
+    "asar": true,
+    "compression": "maximum",
+    "npmRebuild": true,
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  }
+}
